@@ -16,10 +16,7 @@ def main():
         else:
             continue
     ed = datetime.datetime.now()
-    print("繰り返し回数")
-    print(max_repeat)
-    print("かかった時間(s)")
-    print((ed-st).seconds)
+    print(f"かかった時間:{(ed-st).seconds}秒")
 def alphabets():
     global answer_number, luck_number, ans
     alp=[]
@@ -40,13 +37,13 @@ def alphabets():
 
 def que():
     global luck_number, ans, y, max_repeat, repeat
-    x=int(input("欠損文字はいくつあるでしょうか？"))
+    x=int(input("欠損文字はいくつあるでしょうか？:"))
     if x==2:
         print("正解です。それでは、具体的に欠損文字を一つずつ入力してください")
-        z=input("1つ目の文字を入力してください")
+        z=input("1つ目の文字を入力してください:")
         result = z in ans
         if result==True:
-            z2=input("2つ目の文字を入力してください")
+            z2=input("2つ目の文字を入力してください:")
             result2 = z2 in ans
             if result2==True:
                 print("正解")
