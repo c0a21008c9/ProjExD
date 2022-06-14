@@ -2,7 +2,8 @@ import random
 import datetime
 answer_number=10
 luck_number=2
-max_repeat=0
+max_repeat=5
+repeat=0
 ans=[]
 y=False
 def main():
@@ -10,6 +11,10 @@ def main():
     while y==False:
         alphabets()
         que()
+        if repeat == max_repeat:
+            break
+        else:
+            continue
     ed = datetime.datetime.now()
     print("繰り返し回数")
     print(max_repeat)
@@ -34,7 +39,7 @@ def alphabets():
     #print(ans)
 
 def que():
-    global luck_number, ans, y, max_repeat
+    global luck_number, ans, y, max_repeat, repeat
     x=int(input("欠損文字はいくつあるでしょうか？"))
     if x==2:
         print("正解です。それでは、具体的に欠損文字を一つずつ入力してください")
@@ -48,9 +53,9 @@ def que():
                 y=True
         else:
             print("不正解です。またチャレンジしてください")
-            max_repeat+=1
+            repeat+=1
     else:
         print("不正解です。またチャレンジしてください")
-        max_repeat+=1
+        repeat+=1
 if __name__ == "__main__":
     main()
