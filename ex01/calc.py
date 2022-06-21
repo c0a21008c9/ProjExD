@@ -28,8 +28,8 @@ if __name__ == "__main__":
     entry.grid(row=0, column=0, columnspan=3)
 
     r,c=1,0
-    for i,num in enumerate([i for i in range(9,-1,-1)]+["+","-","*","/","=","AC"]):
-        btn = tk.Button(root, text=f"{num}", width=4, height=1,font=("Times New Roman",30),bg="#000fff000",fg="#ff0000")
+    for i,num in enumerate([j for j in range(9,-1,-1)]+["+","-","*","/","=","AC"]):
+        btn = tk.Button(root, text=f"{num}", width=4, height=1,font=("Times New Roman",30),bg="yellow",fg="magenta")
         btn.bind("<1>",button_click)
         btn.grid(row=r,column=c)
         c+=1
