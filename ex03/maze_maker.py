@@ -24,13 +24,13 @@ def make_maze(yoko, tate):
 
     return maze_lst
 
-def make_color():
-    color = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])]
+def make_color():#色を作る関数
+    color = ["#"+''.join([random.choice('0123456789ABCDEF') for j in range(6)])] #色をランダムで作成
     return color
 
 def show_maze(canvas, maze_lst):
-    a=make_color()
-    b=make_color()
+    a=make_color() #make_color関数で色を作成
+    b=make_color() #make_color関数で色を作成
     color = [a, b]
     for y in range(len(maze_lst)):
         for x in range(len(maze_lst[y])):
