@@ -4,9 +4,9 @@ import tkinter.messagebox as tkm
 import random
 
 def key_down(event):
-    global key,jid #グローバル宣言
+    global key #グローバル宣言
     key=event.keysym
-    jid = root.after(100,main_proc)
+    root.after(100,main_proc)
     #print(f"{key}が押されました") #テスト用
 
 def key_up(event):
@@ -15,7 +15,7 @@ def key_up(event):
     root.after(100,main_proc)
 
 def main_proc():
-    global jid,mx,my,cx,cy #グローバル宣言
+    global mx,my,cx,cy #グローバル宣言
     delta={"Up":[0,-1],"Down":[0,+1],"Left":[-1,0],"Right":[+1,0]}#入力されたキーによる移動方向
     try:
         if maze_bg[my+delta[key][1]][mx+delta[key][0]]==0: #もし移動先が壁なら
@@ -26,7 +26,7 @@ def main_proc():
         pass
     cx, cy=mx*100+50, my*100+50
     canvas.coords("tori",cx,cy)
-    jid = root.after(10000,main_proc)
+    root.after(10000,main_proc)
 
 if __name__ == "__main__":
     root=tk.Tk()
