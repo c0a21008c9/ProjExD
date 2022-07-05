@@ -47,7 +47,7 @@ def main():
 
         for event in pg.event.get():
             if event.type==pg.QUIT: return#終了判定
-#練習４
+#練習４ボタンが押された時の反応
         key_states=pg.key.get_pressed()
         if key_states[pg.K_UP] == True:kking_rct.centery-=1#ボタンが押されたときの反応
         if key_states[pg.K_DOWN]==True:kking_rct.centery+=1#ボタンが押されたときの反応
@@ -60,18 +60,18 @@ def main():
             if key_states[pg.K_RIGHT]==True:kking_rct.centerx-=1#ボタンが押されたときの反応
         screen_sfc.blit(kkimg_sfc,kking_rct)
 
-#練習６
+#練習６爆弾の移動
         boming_rct.move_ip(vx,vy)
 
-#練習５
+#練習５スクリーンの表示
         screen_sfc.blit(boming_sfc, boming_rct)
 
-#練習 7
+#練習 7　爆弾の移動
         yoko, tate= check_bound(boming_rct, screen_rct)
         vx*=yoko
         vy*=tate
 
-#練習8
+#練習8　ゲームを終了させる
         if kking_rct.colliderect(boming_rct):
             game_over()
             tkm.showwarning("ゲームオーバー","残念！また挑戦してね")#ゲームオーバー文の表示
