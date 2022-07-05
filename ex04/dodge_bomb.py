@@ -40,7 +40,6 @@ def main():
     boming_rct.centery = random.randint(0, screen_rct.height)#出現位置のy座標をランダムに
     vx, vy= +1, +1
 
-
     while True:
         screen_sfc.blit(bgimg_sfc, bgimg_rct)
         
