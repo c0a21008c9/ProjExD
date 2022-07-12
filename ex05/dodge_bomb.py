@@ -137,8 +137,7 @@ def main():#メイン関数
         scr.blit()
         
         for event in pg.event.get():
-            if event.type==pg.QUIT: 
-                return
+            if event.type==pg.QUIT: return
             
         kkt.update(scr) #kktのupdateを起動
         bkd.update(scr) #bkdのupdateを起動
@@ -161,7 +160,6 @@ def check_bound(rct, scr_rct):
     [1]rct:こうかとん or 爆弾のrct
     [2]scr_rct:スクリーンのRect
     '''
-    
     yoko, tate= +1, +1
     if rct.left < scr_rct.left or scr_rct.right<rct.right: yoko = -1 #領域外
     if rct.top < scr_rct.top or scr_rct.bottom<rct.bottom: tate = -1 #領域外
