@@ -137,7 +137,8 @@ def main():#メイン関数
         scr.blit()
         
         for event in pg.event.get():
-            if event.type==pg.QUIT: return
+            if event.type==pg.QUIT: 
+                return
             
         kkt.update(scr) #kktのupdateを起動
         bkd.update(scr) #bkdのupdateを起動
