@@ -164,7 +164,7 @@ def main():
             sound2.play(1)#再生回数
 
         font = pg.font.Font(None,100)
-        text = font.render(f"{count1}:{count2}", True, (255,255,255))#得点を表示
+        text = font.render(f"{count2}:{count1}", True, (255,255,255))#得点を表示
         scr.sfc.blit(text, [750, 50])#得点を表示
 
         if count1>=5:
